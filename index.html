@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132238">
+  <meta name="description" content="OpenVoice Board, a fixed browser-local communication aid project by RandomVibez.ai.">
+  <title>OpenVoice Board — a RandomVibez.ai project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#board-grid">Skip to communication cards</a>
+  <header class="site-header">
+    <div class="site-branding">
+      <a class="project-mark" href="https://randomvibez.ai/" aria-label="RandomVibez.ai home"><img src="randomvibez-logo.jpg" alt="RandomVibez.ai"></a>
+      <div>
+        <p class="eyebrow">A RandomVibez.ai project • fixed boards • no account • no network</p>
+        <h1>OpenVoice Board</h1>
+        <p class="subtitle">Tap a card to hear a phrase. The curated vocabulary is the same for every visitor and cannot be edited or uploaded.</p>
+      </div>
+    </div>
+    <button id="contrast-toggle" class="inverse-button" type="button" aria-pressed="false">High contrast</button>
+  </header>
+  <main>
+    <section class="panel introduction" aria-labelledby="about-heading">
+      <h2 id="about-heading">A simple way to express more</h2>
+      <p>OpenVoice Board is a straightforward communication aid for people who may need another way to express needs, feelings, choices, comfort, or conversation. It works without an account and keeps the available vocabulary fixed, so the public tool is predictable and cannot be changed by strangers or by an uploaded file.</p>
+      <p><strong>How to use it:</strong> choose the board that fits the moment, then tap a card to hear the phrase or show it on screen. Speech depends on the browser and installed voices.</p>
+    </section>
+
+    <section class="panel controls" aria-labelledby="board-tools-heading">
+      <h2 id="board-tools-heading" class="sr-only">Board choices</h2>
+      <label for="board-select">Choose a board</label>
+      <select id="board-select" aria-label="Choose a communication board"></select>
+      <label for="speech-rate">Voice speed <output id="rate-output">1.0×</output></label>
+      <input id="speech-rate" type="range" min="0.6" max="1.4" step="0.1" value="1" aria-label="Voice speed">
+      <button id="print-board" type="button">Print this board</button>
+    </section>
+
+    <section aria-labelledby="active-board-name">
+      <div class="board-heading-row">
+        <div><p class="eyebrow">Curated communication cards</p><h2 id="active-board-name">Loading…</h2></div>
+      </div>
+      <div id="board-grid" class="board-grid" role="list" aria-busy="true"></div>
+    </section>
+
+    <section class="safety-note" aria-label="Important medical and emergency note">
+      <strong>Important:</strong> This general aid does not replace emergency services, a medical device, an established communication system, or assessment by a qualified speech-language professional. It is not a way to contact help. Test symbols with the intended user, keep an established care and emergency plan, and do not put sensitive personal information on the screen.
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </main>
+  <footer class="project-footer">
+    <a href="https://randomvibez.ai/" class="footer-brand"><img src="randomvibez-logo.jpg" alt=""> <span>A RandomVibez.ai Project</span></a>
+    <p>ONLINE TOOLS. BUILT BY AI. FOR EVERYONE.</p>
+    <a href="https://randomvibez.ai/">Explore more projects at randomvibez.ai</a>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
